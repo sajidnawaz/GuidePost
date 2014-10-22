@@ -14,6 +14,10 @@
 		288720A619F78624000F3CC4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 288720A519F78624000F3CC4 /* Images.xcassets */; };
 		288720A919F78624000F3CC4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 288720A719F78624000F3CC4 /* LaunchScreen.xib */; };
 		288720B519F78624000F3CC4 /* GuidePostTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 288720B419F78624000F3CC4 /* GuidePostTests.m */; };
+		28D4D64D19F831F900C3142A /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64719F831F800C3142A /* TFHpple.m */; };
+		28D4D64E19F831F900C3142A /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64919F831F800C3142A /* TFHppleElement.m */; };
+		28D4D64F19F831F900C3142A /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64C19F831F900C3142A /* XPathQuery.m */; };
+		28D4D65119F832CD00C3142A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D4D65019F832CD00C3142A /* libxml2.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,13 @@
 		288720AE19F78624000F3CC4 /* GuidePostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuidePostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		288720B319F78624000F3CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		288720B419F78624000F3CC4 /* GuidePostTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuidePostTests.m; sourceTree = "<group>"; };
+		28D4D64619F831F800C3142A /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		28D4D64719F831F800C3142A /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		28D4D64819F831F800C3142A /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		28D4D64919F831F800C3142A /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		28D4D64B19F831F900C3142A /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		28D4D64C19F831F900C3142A /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		28D4D65019F832CD00C3142A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28D4D65119F832CD00C3142A /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +75,8 @@
 		2887208C19F78623000F3CC4 = {
 			isa = PBXGroup;
 			children = (
+				28D4D65019F832CD00C3142A /* libxml2.2.dylib */,
+				28D4D64519F831F800C3142A /* Hpple */,
 				2887209719F78623000F3CC4 /* GuidePost */,
 				288720B119F78624000F3CC4 /* GuidePostTests */,
 				2887209619F78623000F3CC4 /* Products */,
@@ -117,6 +131,28 @@
 				288720B319F78624000F3CC4 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		28D4D64519F831F800C3142A /* Hpple */ = {
+			isa = PBXGroup;
+			children = (
+				28D4D64619F831F800C3142A /* TFHpple.h */,
+				28D4D64719F831F800C3142A /* TFHpple.m */,
+				28D4D64819F831F800C3142A /* TFHppleElement.h */,
+				28D4D64919F831F800C3142A /* TFHppleElement.m */,
+				28D4D64A19F831F900C3142A /* XPath */,
+			);
+			name = Hpple;
+			path = GuidePost/Hpple;
+			sourceTree = "<group>";
+		};
+		28D4D64A19F831F900C3142A /* XPath */ = {
+			isa = PBXGroup;
+			children = (
+				28D4D64B19F831F900C3142A /* XPathQuery.h */,
+				28D4D64C19F831F900C3142A /* XPathQuery.m */,
+			);
+			path = XPath;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,6 +258,9 @@
 				288720A119F78624000F3CC4 /* ViewController.m in Sources */,
 				2887209E19F78624000F3CC4 /* AppDelegate.m in Sources */,
 				2887209B19F78624000F3CC4 /* main.m in Sources */,
+				28D4D64D19F831F900C3142A /* TFHpple.m in Sources */,
+				28D4D64F19F831F900C3142A /* XPathQuery.m in Sources */,
+				28D4D64E19F831F900C3142A /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +451,7 @@
 				288720BA19F78624000F3CC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		288720BB19F78624000F3CC4 /* Build configuration list for PBXNativeTarget "GuidePostTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +460,7 @@
 				288720BD19F78624000F3CC4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
