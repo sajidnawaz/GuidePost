@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -17,13 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9o-P7-SQy">
-                                <rect key="frame" x="50" y="20" width="501" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Efj-86-PTN">
-                                <rect key="frame" x="277" y="102" width="35" height="30"/>
+                                <rect key="frame" x="283" y="425" width="35" height="30"/>
                                 <state key="normal" title="Load">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -31,35 +26,73 @@
                                     <action selector="loadUrl:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5ei-iM-GaP"/>
                                 </connections>
                             </button>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5y7-dD-0UP">
-                                <rect key="frame" x="284" y="290" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="5y7-dD-0UP">
+                                <rect key="frame" x="282" y="474" width="37" height="37"/>
                             </activityIndicatorView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdb-ub-0sO">
-                                <rect key="frame" x="50" y="192" width="501" height="354"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G9o-P7-SQy">
+                                <rect key="frame" x="50" y="20" width="501" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uCW-4d-5WJ" customClass="ResizableV">
+                                <rect key="frame" x="0.0" y="63" width="600" height="337"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ASS-q3-faG">
+                                        <rect key="frame" x="58" y="7" width="501" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="so5-gq-xt6">
+                                        <rect key="frame" x="208" y="61" width="351" height="260"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bOo-XK-nb9">
+                                        <rect key="frame" x="58" y="61" width="132" height="115"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickPhoto:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="FqV-Nw-1xD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.76862752440000004" green="0.03529411927" blue="0.13725490870000001" alpha="1" colorSpace="deviceRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aay-aM-6vy">
+                                <rect key="frame" x="7" y="19" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="test:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="EBS-P9-8D3"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5y7-dD-0UP" firstAttribute="centerX" secondItem="Efj-86-PTN" secondAttribute="centerX" id="2IK-Zy-Rv0"/>
-                            <constraint firstItem="G9o-P7-SQy" firstAttribute="trailing" secondItem="kdb-ub-0sO" secondAttribute="trailing" id="4iP-SO-Ghg"/>
+                            <constraint firstItem="5y7-dD-0UP" firstAttribute="centerX" secondItem="Efj-86-PTN" secondAttribute="centerX" id="4fT-C2-hAo"/>
                             <constraint firstItem="G9o-P7-SQy" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="5Gz-Co-Y2Z"/>
-                            <constraint firstItem="kdb-ub-0sO" firstAttribute="top" secondItem="Efj-86-PTN" secondAttribute="bottom" constant="60" id="5iq-ZR-aOp"/>
                             <constraint firstItem="G9o-P7-SQy" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="891-qI-o77"/>
-                            <constraint firstItem="G9o-P7-SQy" firstAttribute="leading" secondItem="kdb-ub-0sO" secondAttribute="leading" id="EyD-Rz-qAN"/>
+                            <constraint firstItem="Efj-86-PTN" firstAttribute="top" secondItem="uCW-4d-5WJ" secondAttribute="bottom" constant="25" id="CP9-5s-c45"/>
+                            <constraint firstItem="uCW-4d-5WJ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="GZX-BT-KO0"/>
+                            <constraint firstItem="5y7-dD-0UP" firstAttribute="top" secondItem="Efj-86-PTN" secondAttribute="bottom" constant="19" id="GaJ-Sq-zcd"/>
+                            <constraint firstItem="uCW-4d-5WJ" firstAttribute="top" secondItem="G9o-P7-SQy" secondAttribute="bottom" constant="13" id="HDg-s3-lpr"/>
                             <constraint firstItem="G9o-P7-SQy" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="34" id="LzU-N4-GM4"/>
-                            <constraint firstItem="5y7-dD-0UP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="284" id="Swm-lc-OTZ"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="kdb-ub-0sO" secondAttribute="bottom" constant="54" id="TPG-Lu-Toi"/>
-                            <constraint firstItem="Efj-86-PTN" firstAttribute="top" secondItem="G9o-P7-SQy" secondAttribute="bottom" constant="52" id="dyd-qJ-ES3"/>
-                            <constraint firstItem="5y7-dD-0UP" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="e10-Wy-sLL"/>
+                            <constraint firstItem="uCW-4d-5WJ" firstAttribute="centerX" secondItem="G9o-P7-SQy" secondAttribute="centerX" id="b8s-yA-mVg"/>
+                            <constraint firstItem="Efj-86-PTN" firstAttribute="centerX" secondItem="uCW-4d-5WJ" secondAttribute="centerX" id="faZ-My-zyK"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="5y7-dD-0UP" secondAttribute="bottom" constant="89" id="s4R-O0-pPj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="descriptionTextView" destination="so5-gq-xt6" id="X34-oK-8L2"/>
+                        <outlet property="imageButton" destination="bOo-XK-nb9" id="b2d-vA-CWT"/>
                         <outlet property="loadButton" destination="Efj-86-PTN" id="lmF-nV-nyg"/>
+                        <outlet property="resizableView" destination="uCW-4d-5WJ" id="5jQ-6n-29z"/>
                         <outlet property="spinner" destination="5y7-dD-0UP" id="N87-0Z-RKa"/>
-                        <outlet property="textView" destination="kdb-ub-0sO" id="7R2-XF-kfQ"/>
+                        <outlet property="titleTextField" destination="ASS-q3-faG" id="Dc4-bo-iIt"/>
                         <outlet property="urlTextField" destination="G9o-P7-SQy" id="y1d-nl-xqn"/>
                     </connections>
                 </viewController>

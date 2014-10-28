@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280B7ACF19F93F84008154CD /* Camera.m in Sources */ = {isa = PBXBuildFile; fileRef = 280B7ACE19F93F84008154CD /* Camera.m */; };
+		2815BB4F19FED02E001EB238 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 2815BB4E19FED02E001EB238 /* Validator.m */; };
+		2815BB5219FED54F001EB238 /* HtmlConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2815BB5119FED54F001EB238 /* HtmlConnector.m */; };
 		2887209B19F78624000F3CC4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2887209A19F78624000F3CC4 /* main.m */; };
 		2887209E19F78624000F3CC4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2887209D19F78624000F3CC4 /* AppDelegate.m */; };
 		288720A119F78624000F3CC4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288720A019F78624000F3CC4 /* ViewController.m */; };
@@ -17,7 +20,8 @@
 		28D4D64D19F831F900C3142A /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64719F831F800C3142A /* TFHpple.m */; };
 		28D4D64E19F831F900C3142A /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64919F831F800C3142A /* TFHppleElement.m */; };
 		28D4D64F19F831F900C3142A /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D4D64C19F831F900C3142A /* XPathQuery.m */; };
-		28D4D65119F832CD00C3142A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D4D65019F832CD00C3142A /* libxml2.2.dylib */; };
+		28D4D65319F8374C00C3142A /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D4D65219F8374C00C3142A /* libxml2.2.dylib */; };
+		28EEF4D119FC608600D9D3FE /* ResizableV.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEF4D019FC608600D9D3FE /* ResizableV.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		280B7ACD19F93F41008154CD /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		280B7ACE19F93F84008154CD /* Camera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Camera.m; sourceTree = "<group>"; };
+		280B7AD019F94049008154CD /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		280B7AD219F9414A008154CD /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		2815BB4D19FED02E001EB238 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Validator.h; sourceTree = "<group>"; };
+		2815BB4E19FED02E001EB238 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Validator.m; sourceTree = "<group>"; };
+		2815BB5019FED54F001EB238 /* HtmlConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HtmlConnector.h; sourceTree = "<group>"; };
+		2815BB5119FED54F001EB238 /* HtmlConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HtmlConnector.m; sourceTree = "<group>"; };
 		2887209519F78623000F3CC4 /* GuidePost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuidePost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2887209919F78624000F3CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2887209A19F78624000F3CC4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -50,7 +62,9 @@
 		28D4D64919F831F800C3142A /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
 		28D4D64B19F831F900C3142A /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		28D4D64C19F831F900C3142A /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
-		28D4D65019F832CD00C3142A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		28D4D65219F8374C00C3142A /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		28EEF4CF19FC608600D9D3FE /* ResizableV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResizableV.h; sourceTree = "<group>"; };
+		28EEF4D019FC608600D9D3FE /* ResizableV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResizableV.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28D4D65119F832CD00C3142A /* libxml2.2.dylib in Frameworks */,
+				28D4D65319F8374C00C3142A /* libxml2.2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,10 +86,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2815BB4819FEC76A001EB238 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				280B7ACD19F93F41008154CD /* Camera.h */,
+				280B7ACE19F93F84008154CD /* Camera.m */,
+				2815BB4D19FED02E001EB238 /* Validator.h */,
+				2815BB4E19FED02E001EB238 /* Validator.m */,
+				2815BB5019FED54F001EB238 /* HtmlConnector.h */,
+				2815BB5119FED54F001EB238 /* HtmlConnector.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		2815BB4919FEC977001EB238 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				28EEF4CF19FC608600D9D3FE /* ResizableV.h */,
+				28EEF4D019FC608600D9D3FE /* ResizableV.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		2887208C19F78623000F3CC4 = {
 			isa = PBXGroup;
 			children = (
-				28D4D65019F832CD00C3142A /* libxml2.2.dylib */,
+				280B7AD219F9414A008154CD /* AssetsLibrary.framework */,
+				280B7AD019F94049008154CD /* MobileCoreServices.framework */,
+				28D4D65219F8374C00C3142A /* libxml2.2.dylib */,
 				28D4D64519F831F800C3142A /* Hpple */,
 				2887209719F78623000F3CC4 /* GuidePost */,
 				288720B119F78624000F3CC4 /* GuidePostTests */,
@@ -95,6 +133,8 @@
 		2887209719F78623000F3CC4 /* GuidePost */ = {
 			isa = PBXGroup;
 			children = (
+				2815BB4819FEC76A001EB238 /* Utils */,
+				2815BB4919FEC977001EB238 /* Views */,
 				2887209C19F78624000F3CC4 /* AppDelegate.h */,
 				2887209D19F78624000F3CC4 /* AppDelegate.m */,
 				2887209F19F78624000F3CC4 /* ViewController.h */,
@@ -136,11 +176,11 @@
 		28D4D64519F831F800C3142A /* Hpple */ = {
 			isa = PBXGroup;
 			children = (
+				28D4D64A19F831F900C3142A /* XPath */,
 				28D4D64619F831F800C3142A /* TFHpple.h */,
 				28D4D64719F831F800C3142A /* TFHpple.m */,
 				28D4D64819F831F800C3142A /* TFHppleElement.h */,
 				28D4D64919F831F800C3142A /* TFHppleElement.m */,
-				28D4D64A19F831F900C3142A /* XPath */,
 			);
 			name = Hpple;
 			path = GuidePost/Hpple;
@@ -256,10 +296,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				288720A119F78624000F3CC4 /* ViewController.m in Sources */,
+				2815BB4F19FED02E001EB238 /* Validator.m in Sources */,
+				2815BB5219FED54F001EB238 /* HtmlConnector.m in Sources */,
+				280B7ACF19F93F84008154CD /* Camera.m in Sources */,
 				2887209E19F78624000F3CC4 /* AppDelegate.m in Sources */,
 				2887209B19F78624000F3CC4 /* main.m in Sources */,
 				28D4D64D19F831F900C3142A /* TFHpple.m in Sources */,
 				28D4D64F19F831F900C3142A /* XPathQuery.m in Sources */,
+				28EEF4D119FC608600D9D3FE /* ResizableV.m in Sources */,
 				28D4D64E19F831F900C3142A /* TFHppleElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,6 +426,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = GuidePost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -392,6 +441,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SDKROOT)/usr/include/libxml2",
+				);
 				INFOPLIST_FILE = GuidePost/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
