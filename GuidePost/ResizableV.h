@@ -20,6 +20,6 @@
 @property (nonatomic, assign) CGRect expandedFrame;
 @property (nonatomic, assign) CGRect collapsedFrame;
 
-- (void)initialiseFrames:(CGRect)frame;
+- (void)updateFrames:(CGRect)frame;
 
 @end

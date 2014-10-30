@@ -30,18 +30,27 @@
     validator = [[Validator alloc] init];
     htmlConnector = [[HtmlConnector alloc] init];
 
+    [self.imageButton setTitle:@"Loading..." forState:UIControlStateDisabled];
     
-#warning tbd
-    self.urlTextField.text = @"http://localhost/test.html";
+    self.urlTextField.text = @"http://www.yahoo.com";
 //    [self.loadButton setEnabled:NO];
     [self.urlTextField setDelegate:self];
-
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
 
-    [self.resizableView collapse];
+    // different orientations have different sizes so need to uodate frames
+    [self.resizableView updateFrames:self.resizableView.frame];
+    [self performSelector:@selector(collapse) withObject:nil afterDelay:0.1];
+    [self.view setNeedsLayout];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+
+//    [self.resizableView updateFrames:self.resizableView.frame];
+//    [self.view setNeedsLayout];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,38 +91,53 @@
     [self.imageButton setBackgroundImage:nil forState:UIControlStateNormal];
 }
 
+-(void)populateUI:(NSData*)data {
+    TFHpple *doc = [TFHpple hppleWithHTMLData:data encoding:@"utf-8"];
+    
+    NSString *title = [self retrieveHtmlContentForXPath:@"//meta[@property='og:title']/@content" alternateXPath:@"//title" withDoc:doc];
+    NSString *imageUrl = [self retrieveHtmlContentForXPath:@"//meta[@property='og:image']/@content" alternateXPath:@"" withDoc:doc];
+    NSString *description = [self retrieveHtmlContentForXPath:@"//meta[@property='og:description']/@content" alternateXPath:@"" withDoc:doc];
+    
+    NSLog(@"Title: %@, Image: %@, Description: %@", title, imageUrl, description);
+    
+    [self.titleTextField setText:title];
+    [self.descriptionTextView setText:description];
+    
+    [self.imageButton setEnabled:NO];
+    [htmlConnector getImageFromURL:imageUrl
+                  withSuccessBlock:(HCSuccessBlock)^(NSData *data) {
+                      
+                      [self.imageButton setEnabled:YES];
+                      UIImage *img = [[UIImage alloc] initWithData:data];
+                      if(img)
+                          [self.imageButton setBackgroundImage:img forState:UIControlStateNormal];
+                  } withFailureBlock:(HCFailureBlock)^(NSError * error) {
+                      [self.imageButton setEnabled:YES];
+                  }];
+}
+
+-(void)expand {
+    [self.resizableView expand];
+}
+
+-(void)collapse {
+    [self.resizableView collapse];
+}
+
 - (IBAction)loadUrl:(id)sender {
     
     [self.loadButton setEnabled:NO];
     [self.spinner startAnimating];
     
     [self clearContents];
-    [self.resizableView collapse];
 
     [htmlConnector getContentsOfURLFromString:[self.urlTextField text]
                              withSuccessBlock:(HCSuccessBlock)^(NSData *data) {
+                                 [self populateUI:data];
+                                 [self performSelector:@selector(expand) withObject:nil afterDelay:0.1];
+                                 
                                  [self.spinner stopAnimating];
                                  [self.loadButton setEnabled:YES];
-                                 
-                                 TFHpple *doc = [TFHpple hppleWithHTMLData:data encoding:@"utf-8"];
-                                 
-                                 NSString *title = [self retrieveHtmlContentForXPath:@"//meta[@property='og:title']/@content" alternateXPath:@"//title" withDoc:doc];
-                                 NSString *imageUrl = [self retrieveHtmlContentForXPath:@"//meta[@property='og:image']/@content" alternateXPath:@"" withDoc:doc];
-                                 NSString *description = [self retrieveHtmlContentForXPath:@"//meta[@property='og:description']/@content" alternateXPath:@"" withDoc:doc];
-                                 
-                                 NSLog(@"Title: %@, Image: %@, Description: %@", title, imageUrl, description);
-                                 
-                                 [self.titleTextField setText:title];
-                                 [self.descriptionTextView setText:description];
-                                 [self.resizableView expand];
-                                 
-                                 [htmlConnector getImageFromURL:imageUrl
-                                                 withSuccessBlock:(HCSuccessBlock)^(NSData *data) {
-                                                     UIImage *img = [[UIImage alloc] initWithData:data];
-                                                     if(img)
-                                                         [self.imageButton setBackgroundImage:img forState:UIControlStateNormal];
-                                                 } withFailureBlock:(HCFailureBlock)^(NSError * error) {
-                                                 }];
                                  
                              } withFailureBlock:(HCFailureBlock)^(NSError * error) {
                                  [self.spinner stopAnimating];
@@ -139,17 +163,25 @@
 
 #pragma mark - UITextFieldDelegate
 
+- (void) textFieldDidBeginEditing:(UITextField *)textField {
+    if(textField.tag == 10)
+        [self performSelector:@selector(collapse) withObject:nil afterDelay:0.1];
+}
+
 - (void) textFieldDidEndEditing:(UITextField *)textField {
     
-    NSString * url = [self.urlTextField text];
-    [self validateUrlTextField:url];
-    
+    if(textField.tag == 10) {
+        NSString * url = [self.urlTextField text];
+        [self validateUrlTextField:url];
+    }
 }
 
 - (BOOL) textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     
-    NSString * url = [self.urlTextField text];
-    [self validateUrlTextField:url];
+    if(textField.tag == 10) {
+        NSString * url = [self.urlTextField text];
+        [self validateUrlTextField:url];
+    }
     return YES;
     
 }
@@ -158,8 +190,10 @@
     
     [textField resignFirstResponder];
     
-    if(self.loadButton.enabled)
-        [self loadUrl:nil];
+    if(textField.tag == 10) {
+        if(self.loadButton.enabled)
+            [self loadUrl:nil];
+    }
     
     return NO;
     
